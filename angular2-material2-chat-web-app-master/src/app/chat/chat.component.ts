@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild, ViewEncapsulation, Inject, ElementRef} from '@angular/core';
-import {PerfectScrollbarComponent} from "angular2-perfect-scrollbar";
+import {PerfectScrollbarComponent} from "ngx-perfect-scrollbar";
 import {fadeInAnimation} from "../route.animation";
 
 @Component({

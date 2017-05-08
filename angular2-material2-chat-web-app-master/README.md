@@ -25,7 +25,7 @@
 
 [angular-in-memory-web-api](https://github.com/angular/in-memory-web-api)
 
-[angular2-perfect-scrollbar](https://www.npmjs.com/package/angular2-perfect-scrollbar)
+[ngx-perfect-scrollbar](https://github.com/zefoy/ngx-perfect-scrollbar)
 
 
 ### 关联项目
