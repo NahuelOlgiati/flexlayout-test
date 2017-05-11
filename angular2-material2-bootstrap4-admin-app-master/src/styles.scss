@@ -1,35 +1,36 @@
+@import './vendors/material-design-icons/iconfont/material-icons.css';
 
-@import "./vendors/material-design-icons/iconfont/material-icons.css";
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
 
-
-@import '~@angular/material/_theming';
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
 @include mat-core();
-//@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-//@import "~@angular/material/prebuilt-themes/indigo-pink";
-//@import "~@angular/material/prebuilt-themes/purple-green";
-//@import "~@angular/material/prebuilt-themes/pink-bluegrey";
 
-$angular-material-primary: mat-palette($mat-blue-grey);
-$angular-material-accent:  mat-palette($mat-amber, A200, A100, A400);
-$angular-material-warn:    mat-palette($mat-deep-orange);
-$angular-material-theme:   mat-dark-theme($angular-material-primary, $angular-material-accent, $angular-material-warn);
-@include angular-material-theme($angular-material-theme);
+// Define the default theme (same as the example above).
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$candy-app-theme:   mat-light-theme($candy-app-primary, $candy-app-accent);
 
-@import "./app/component/pagination/pagination.component";
-$pagination-primary: mat-palette($mat-indigo);
-$pagination-accent: mat-palette($mat-pink);
-$pagination-warn: mat-palette($mat-red);
-$pagination-theme: mat-light-theme($pagination-primary, $pagination-accent,$pagination-warn);
-@include pagination-theme($pagination-theme);
+// Include the default theme styles.
+@include angular-material-theme($candy-app-theme);
 
-@import "./app/navigation/navigation.component";
-$navigation-primary: mat-palette($mat-blue-grey);
-$navigation-accent: mat-palette($mat-amber, A200, A100, A400);
-$navigation-warn: mat-palette($mat-deep-orange);
-$navigation-theme:  mat-light-theme($navigation-primary, $navigation-accent, $navigation-warn);
-@include navigation-theme($navigation-theme);
 
-@import "./scss/apps/_tables";
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+@import './app/component/pagination/pagination.component';
+@include pagination-theme($candy-app-theme);
+
+@import './app/navigation/navigation.component';
+@include navigation-theme($dark-theme);
+
+
+@import './scss/apps/_tables';
 
 html, body {
   margin: 0;
